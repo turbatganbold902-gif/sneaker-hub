@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SNEAKER HUB | Premium Sneakers</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <a href="#home" class="logo">SNEAKER<span>HUB.</span></a>
+
+        <nav class="navbar">
+            <a href="#home">НҮҮР</a>
+            <a href="#products">БҮХ БҮТЭЭГДЭХҮҮН</a>
+            <a href="#brands">БРЭНД</a>
+            <a href="#men">MEN</a>
+            <a href="#women">WOMEN</a>
+        </nav>
+
+        <div class="header-actions">
+            <button onclick="toggleSearch()">⌕</button>
+            <button onclick="toggleCart()">САГС (<span id="cart-count">0</span>)</button>
+            <button onclick="openLogin()">НЭВТРЭХ</button>
+        </div>
+
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search-box" id="search-box">
+        <input type="text" id="search-input"
+        placeholder="Пүүз хайх..." oninput="searchProducts()">
+    </div>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+            <p class="small-title">THE NEW GENERATION OF SNEAKERS</p>
+
+            <h1>NEVER<br>STOP<br>MOVING.</h1>
+
+            <p>
+                Discover your style.
+                Find your perfect sneakers.
+            </p>
+
+            <a href="#products" class="main-btn">SHOP NOW ↗</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="images/lebron.jpg" alt="LeBron James">
+        </div>
+
+    </section>
+
+    <!-- BRANDS -->
+    <section class="brands" id="brands">
+
+        <h2>OUR BRANDS</h2>
+
+        <div class="brand-list">
+            <a href="#products" onclick="selectBrand('Nike')">NIKE</a>
+            <a href="#products" onclick="selectBrand('Jordan')">JORDAN</a>
+            <a href="#products" onclick="selectBrand('Under Armour')">UNDER ARMOUR</a>
+        </div>
+
+    </section>
+
+    <!-- ALL PRODUCTS -->
+    <section class="products-section" id="products">
+
+        <div class="section-title">
+            <div>
+                <p class="small-title">OUR COLLECTION</p>
+                <h2>ALL SNEAKERS.</h2>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-list">
+            <!-- JavaScript products -->
+        </div>
+
+    </section>
+
+    <!-- MEN -->
+    <section class="category-section" id="men">
+
+        <div class="category-title">
+            <p class="small-title">FOR HIM</p>
+            <h2>MEN'S COLLECTION</h2>
+        </div>
+
+        <div class="product-grid" id="men-products">
+        </div>
+
+    </section>
+
+    <!-- WOMEN -->
+    <section class="category-section" id="women">
+
+        <div class="category-title">
+            <p class="small-title">FOR HER</p>
+            <h2>WOMEN'S COLLECTION</h2>
+        </div>
+
+        <div class="product-grid" id="women-products">
+        </div>
+
+    </section>
+
+    <!-- PAYMENT -->
+    <section class="payment-section" id="payment">
+
+        <p class="small-title">SECURE PAYMENT</p>
+        <h2>PAYMENT METHODS</h2>
+
+        <div class="payment-list">
+            <div>KHAN BANK</div>
+            <div>GOLOMT BANK</div>
+            <div>TD BANK</div>
+            <div>APPLE PAY</div>
+            <div>POCKET</div>
+            <div>STOREPAY</div>
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>CONTACT US</h2>
+        <p>Email: sneakerhub@example.com</p>
+        <p>Ulaanbaatar, Mongolia</p>
+    </section>
+
+    <!-- CART -->
+    <div class="cart-overlay" id="cart-overlay"
+         onclick="toggleCart()"></div>
+
+    <aside class="cart-panel" id="cart-panel">
+
+        <div class="cart-header">
+            <h2>YOUR CART</h2>
+            <button onclick="toggleCart()">✕</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-total">
+            <h3>Нийт: <span id="cart-total">0₮</span></h3>
+            <button onclick="goToPayment()">ТӨЛБӨР ТӨЛӨХ</button>
+        </div>
+
+    </aside>
+
+    <!-- LOGIN -->
+    <div class="login-overlay" id="login-overlay">
+
+        <div class="login-box">
+
+            <button class="login-close" onclick="closeLogin()">✕</button>
+
+            <h2>SNEAKER HUB.</h2>
+            <p>WELCOME BACK</p>
+
+            <input type="email" id="email"
+                   placeholder="И-мэйл хаяг">
+
+            <input type="password" id="password"
+                   placeholder="Нууц үг">
+
+            <button onclick="login()">НЭВТРЭХ</button>
+
+            <p>Бүртгэлгүй юу?</p>
+
+            <button class="register-btn" onclick="register()">
+                БҮРТГҮҮЛЭХ
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2>SNEAKER HUB.</h2>
+        <p>STEP INTO YOUR STYLE.</p>
+        <p>© 2026 SNEAKER HUB. STUDENT PROJECT.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
